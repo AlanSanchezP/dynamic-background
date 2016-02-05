@@ -29,6 +29,7 @@
 			<content></content>
 		</div>
 	</template>
+	<script src="../jquery/dist/jquery.min.js"></script>
 	<script>
 	Polymer({
 		is: 'scrolling-background',
@@ -52,6 +53,9 @@
 		scroller: function() {
 			this.backgroundIndex += 1;
 			this.activeBackground = this.backgroundsCollection[this.backgroundIndex];
+			console.log(this.$.background.offsetHeight);
+			console.log(this.$.background.offsetWidth);
+			console.log(a);
 		}
 	});
 	</script>
