@@ -10,6 +10,7 @@
 			position: fixed;
 			right: 0;
 			top: 0;
+			transition: background 0.3s;
 		}
 		#information-container {
 			position: fixed;
@@ -24,7 +25,7 @@
 		<div id="background" style$="background-image: url({{activeBackground}})">
 			a
 		</div>
-		<div id="information-container">
+		<div id="information-container" on-scroll="scroller">
 			<content></content>
 		</div>
 	</template>
@@ -37,9 +38,20 @@
 				value: ''
 			}
 		},
+		backgroundsCollection: [],
+		backgroundIndex: Number,
 		ready: function () {
-			var a = document.querySelectorAll('background-element');
-			this.activeBackground = a[0].getAttribute('background');
+			var nodeList = document.querySelectorAll('background-element'),
+				i
+			for(i = 0; i < nodeList.length; i++) {
+				this.backgroundsCollection.push(nodeList[i].getAttribute('background'));
+			}
+			this.backgroundIndex = 0;
+			this.activeBackground = this.backgroundsCollection[0];
+		},
+		scroller: function() {
+			this.backgroundIndex += 1;
+			this.activeBackground = this.backgroundsCollection[this.backgroundIndex];
 		}
 	});
 	</script>
