@@ -1,0 +1,46 @@
+<link rel="import" href="../polymer/polymer.html" />
+
+<dom-module id="scrolling-background">
+	<style>
+		#background {
+			background-size: cover !important;
+			background-position: 50% 50% !important;
+			bottom: 0;
+			left: 0;
+			position: fixed;
+			right: 0;
+			top: 0;
+		}
+		#information-container {
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			overflow-y: auto;
+		}
+	</style>
+	<template>
+		<div id="background" style$="background-image: url({{activeBackground}})">
+			a
+		</div>
+		<div id="information-container">
+			<content></content>
+		</div>
+	</template>
+	<script>
+	Polymer({
+		is: 'scrolling-background',
+		properties: {
+			activeBackground: {
+				type: String,
+				value: ''
+			}
+		},
+		ready: function () {
+			var a = document.querySelectorAll('background-element');
+			this.activeBackground = a[0].getAttribute('background');
+		}
+	});
+	</script>
+</dom-module>

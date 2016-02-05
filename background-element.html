@@ -1,0 +1,25 @@
+<link rel="import" href="../polymer/polymer.html" />
+
+<dom-module id="background-element">
+	<style>
+		.background-element {
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+	<template>
+		<div class="background-element">
+			<content></content>
+		</div>
+	</template>
+	<script>
+	Polymer({
+		is: 'background-element',
+		properties: {
+			background: {
+				type: String
+			}
+		}
+	});
+	</script>
+</dom-module>
