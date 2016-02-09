@@ -40,22 +40,32 @@
 			}
 		},
 		backgroundsCollection: [],
-		backgroundIndex: Number,
+		windowSize: {
+			height: Number,
+			width: Number
+		},
 		ready: function () {
 			var nodeList = document.querySelectorAll('background-element'),
-				i
+				i;
 			for(i = 0; i < nodeList.length; i++) {
 				this.backgroundsCollection.push(nodeList[i].getAttribute('background'));
 			}
-			this.backgroundIndex = 0;
 			this.activeBackground = this.backgroundsCollection[0];
 		},
-		scroller: function() {
-			this.backgroundIndex += 1;
-			this.activeBackground = this.backgroundsCollection[this.backgroundIndex];
-			console.log(this.$.background.offsetHeight);
-			console.log(this.$.background.offsetWidth);
-			console.log(a);
+		attached: function () {
+			var that = this,
+				getWindowSize = function () {
+					that.windowSize.height = $(that.$.background).height();
+					that.windowSize.width = $(that.$.background).width();
+				};
+			getWindowSize();
+			$(window).resize(getWindowSize);
+		},
+		scroller: function(event) {
+			var target = $(event.target),
+				that = this,
+				ratio = parseInt(target.scrollTop() / this.windowSize.height);
+			this.activeBackground = this.backgroundsCollection[ratio];
 		}
 	});
 	</script>
