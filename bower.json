@@ -1,11 +1,11 @@
 {
-  "name": "scrolling-background",
-  "homepage": "https://github.com/AlanSanchezP/scrolling-background",
+  "name": "dynamic-background",
+  "homepage": "https://github.com/AlanSanchezP/dynamic-background",
   "authors": [
     "Alan Sanchez <sanchezpineda03@gmail.com>"
   ],
   "description": "",
-  "main": "scrolling-background.html",
+  "main": "dynamic-background.html",
   "moduleType": [],
   "license": "MIT",
   "private": true,

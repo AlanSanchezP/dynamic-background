@@ -1,1 +1,1 @@
-# scrolling-background
+# dynamic-background
