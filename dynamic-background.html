@@ -64,7 +64,7 @@
 		scroller: function(event) {
 			var target = $(event.target),
 				that = this,
-				ratio = parseInt(target.scrollTop() / this.windowSize.height);
+				ratio = Math.round((target.scrollTop() / this.windowSize.height) - 0.3);
 			this.activeBackground = this.backgroundsCollection[ratio];
 		}
 	});
