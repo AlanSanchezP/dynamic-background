@@ -7,32 +7,62 @@
 	<link rel="import" href="../polymer/polymer.html"/>
 	<link rel="import" href="dynamic-background.html"/>
 	<link rel="import" href="background-element.html" />
+	<style>
+		code {
+			background: white;
+			border: #555 solid 1px;
+			border-radius: 3px;
+			color: #333;
+			display: block;
+			margin-top: 15px;
+			padding: 5px;
+		}
+
+		a {
+			background: #27c;
+			color: white;
+			display: inline-block;
+			margin-top: 10px;
+			padding: 8px;
+			text-decoration: none;
+		}
+	</style>
 </head>
 <body style="margin: 0">
 	<dynamic-background>
 		<background-element type="background" background="demo_backgrounds/background_1.jpg">
-			<h2>Section 1</h2>
-			Text
+			<h2>Simple and nice</h2>
+			<b>dynamic-background</b> it's a web component which lets you have a beautiful landing page divided in full-screen sections, where the page background changes depending which section is currently shown on screen.
 		</background-element>
 		<background-element type="background" background="demo_backgrounds/background_2.jpg">
-			<h2>Section 2</h2>
-			Text
+			<h2>Ready to use</h2>
+			You only need to import the dynamic-background and background-element web components and use them like in the following example:
+			<code>
+&#60;dynamic-background&#62;<br>
+&nbsp; &#60;background-element type="background" background="URL"&#62;<br>
+&nbsp; /* content */<br>
+&nbsp; &#60;/background-element&#62;<br>
+&#60;/dynamic-background&#62;
+			</code>
 		</background-element>
 		<background-element type="background" background="demo_backgrounds/background_3.jpg">
-			<h2>Section 3</h2>
-			Text
+			<h2>There's no limit!</h2>
+			You can use as many elements as you want.
 		</background-element>
 		<background-element type="background" background="demo_backgrounds/background_4.jpg">
-			<h2>Section 4</h2>
-			Text
+			<h2>Download it</h2>
+			Install via bower:
+			<code>bower install --save dynamic-background</code>
 		</background-element>
 		<background-element type="background" background="demo_backgrounds/background_5.jpg">
-			<h2>Section 5</h2>
-			Text
+			<h2>Read more</h2>
+			Read the (short)docs on GitHub: <br>
+			<a href="https://github.com/AlanSanchezP/dynamic-background/tree/master">Click here</a>
+
 		</background-element>
 		<background-element type="footer">
 			<h2>Customizable footer</h2>
-			Text
+			You can also add a footer element at the end of the page.
 		</background-element>
 	</dynamic-background>
 </body>
