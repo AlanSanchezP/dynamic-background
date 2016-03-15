@@ -1,58 +1,15 @@
 <link rel="import" href="../polymer/polymer.html" />
+<link rel="import" href="element-styles/background-element-styles.html">
 
 <dom-module id="background-element">
-	<style>
-		.background-element {
-			background: linear-gradient(90deg,rgba(0,0,0,0.8),rgba(255,255,255,0));
-			box-sizing: border-box !important;
-			height: 100%;
-			line-height: 100%;
-			text-align: justify;
-			width: 100%;
-		}
-
-		.aligner {
-			display: inline-block;
-			height: 100%;
-			vertical-align: middle;
-			width: 0;
-		}
-
-		.text {
-			background: none;
-			box-sizing: border-box !important;
-			color: white;
-			display: inline-block;
-			font-family: Futura, Arial, Sans-Serif;
-			font-size: 25px;
-			height: auto;
-			padding-left: 50px;
-			vertical-align: middle;
-			width: 50%;
-		}
-
-		.text ::content h2{
-			font-size: 50px;
-			margin-bottom: 25px;
-			margin-top: 0;
-		}
-	</style>
 	<template>
-		<div class="background-element">
+		<style include="background-element-styles"></style>
+		<div class$="{{type}}-element">
 			<div class="aligner"></div>
 			<div class="text">
 				<content></content>
 			</div>
 		</div>
 	</template>
-	<script>
-	Polymer({
-		is: 'background-element',
-		properties: {
-			background: {
-				type: String
-			}
-		}
-	});
-	</script>
+	<script src="element-scripts/background-element.js"></script>
 </dom-module>
