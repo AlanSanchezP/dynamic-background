@@ -13,7 +13,7 @@
 			width: Number
 		},
 		ready: function () {
-			var nodeList = document.querySelectorAll('background-element'),
+			var nodeList = document.querySelectorAll('background-element[type="background"]'),
 				i;
 			for(i = 0; i < nodeList.length; i++) {
 				this.backgroundsCollection.push(nodeList[i].getAttribute('background'));
@@ -33,6 +33,7 @@
 			var target = $(event.target),
 				that = this,
 				ratio = Math.round((target.scrollTop() / this.windowSize.height) - 0.3);
+			ratio = ratio < this.backgroundsCollection.length?ratio:this.backgroundsCollection.length - 1;
 			this.activeBackground = this.backgroundsCollection[ratio];
 		}
 	});
