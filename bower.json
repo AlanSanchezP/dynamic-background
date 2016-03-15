@@ -1,6 +1,6 @@
 {
   "name": "dynamic-background",
-  "homepage": "https://github.com/AlanSanchezP/dynamic-background",
+  "homepage": "http://alansanchezp.github.io/dynamic-background/",
   "authors": [
     "Alan Sanchez <sanchezpineda03@gmail.com>"
   ],
@@ -8,7 +8,7 @@
   "main": "dynamic-background.html",
   "moduleType": [],
   "license": "MIT",
-  "private": true,
+  "private": false,
   "ignore": [
     "**/.*",
     "node_modules",
