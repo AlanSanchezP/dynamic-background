@@ -3,7 +3,8 @@
 		is: 'background-element',
 		properties: {
 			type: {
-				type: String
+				type: String,
+				value: 'background'
 			},
 			background: {
 				type: String
